@@ -1,1 +1,1 @@
-﻿int funsum(int n, int x);
+int funsum(int n, int x);
