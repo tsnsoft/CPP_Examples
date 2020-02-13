@@ -2,25 +2,25 @@
 #include <stdlib.h>
 
 int EX3() {
-  FILE *S1, *S2;
-  int x, y;
+    FILE *S1, *S2;
+    int x, y;
 
-  printf("Введите число: ");
-  scanf("%d", &x);
-  
-  S1 = fopen("S1.txt", "w");
-  fprintf(S1, "%d", x);
-  fclose(S1);
-  
-  S1 = fopen("S1.txt", "r");
-  S2 = fopen("S2.txt", "w");
-  fscanf(S1, "%d", &y);
+    printf("Введите число: ");
+    scanf("%d", &x);
 
-  y += 3;
+    S1 = fopen("S1.txt", "w");
+    fprintf(S1, "%d", x);
+    fclose(S1);
 
-  fclose(S1);
+    S1 = fopen("S1.txt", "r");
+    S2 = fopen("S2.txt", "w");
+    fscanf(S1, "%d", &y);
 
-  fprintf(S2, "%d\n", y);
+    y += 3;
 
-  fclose(S2);
+    fclose(S1);
+
+    fprintf(S2, "%d\n", y);
+
+    fclose(S2);
 }
