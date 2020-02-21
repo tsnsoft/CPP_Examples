@@ -1,0 +1,178 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+struct DateStruct {
+    int day;
+    int month;
+    int year;
+};
+
+void print(DateStruct &date) {
+    cout << date.day << "/" << date.month << "/" << date.year;
+}
+
+int EX1() {
+    DateStruct today{ 12, 11, 2018}; // используем uniform инициализацию
+    today.day = 18; // используем оператор выбора члена для выбора члена структуры
+    print(today); // 18/11/2018
+    return 0;
+}
+
+class DateClass1 {
+public:
+    int m_day;
+    int m_month;
+    int m_year;
+
+    void print() {
+        cout << m_day << "/" << m_month << "/" << m_year;
+    }
+};
+
+int EX2() {
+    DateClass1 today{ 12, 11, 2018};
+    // используем оператор выбора членов для выбора переменной-члена объекта today класса DateClass
+    today.m_day = 18;
+    // используем оператор выбора членов для вызова метода объекта today класса DateClass
+    today.print();
+    return 0;
+}
+
+class Employee {
+public:
+    string m_name;
+    int m_id;
+    double m_wage;
+
+    // Метод вывода информации о работнике на экран
+    void print() {
+        cout << "Name: " << m_name <<
+                "\nId: " << m_id <<
+                "\nWage: $" << m_wage << '\n';
+    }
+};
+
+int EX3() {
+    // Объявляем двух работников
+    Employee john{ "John", 5, 30.00};
+    Employee max{ "Max", 6, 32.75};
+
+    // Выводим информацию о работниках на экран
+    john.print();
+    cout << endl;
+    max.print();
+
+    return 0;
+}
+
+class DateClass2 // члены класса являются закрытыми по умолчанию
+{
+    int m_day; // закрыто по умолчанию, доступ имеют только другие члены класса
+    int m_month; // закрыто по умолчанию, доступ имеют только другие члены класса
+    int m_year; // закрыто по умолчанию, доступ имеют только другие члены класса
+
+public:
+
+    void setDate(int day, int month, int year) // открыто, доступ имеет любой объект
+    {
+        // Метод setDate() имеет доступ к закрытым членам класса, так как сам является членом класса
+        m_day = day;
+        m_month = month;
+        m_year = year;
+    }
+
+    void print() // открыто, доступ имеет любой объект
+    {
+        cout << m_day << "/" << m_month << "/" << m_year;
+    }
+};
+
+int EX4() {
+    DateClass2 date;
+    date.setDate(12, 11, 2018); // ок, так как setDate() имеет спецификатор доступа public
+    date.print(); // ок, так как print() имеет спецификатор доступа public
+    return 0;
+}
+
+class DateClass3 // члены класса являются закрытыми по умолчанию 
+{
+    int m_day; // закрыто по умолчанию, доступ имеют только другие члены класса
+    int m_month; // закрыто по умолчанию, доступ имеют только другие члены класса
+    int m_year; // закрыто по умолчанию, доступ имеют только другие члены класса
+
+public:
+
+    void setDate(int day, int month, int year) {
+        m_day = day;
+        m_month = month;
+        m_year = year;
+    }
+
+    void print() {
+        cout << m_day << "/" << m_month << "/" << m_year;
+    }
+
+    // Обратите внимание на этот дополнительный метод
+
+    void copyFrom(const DateClass3 &b) {
+        // Мы имеем прямой доступ к закрытым членам объекта b
+        m_day = b.m_day;
+        m_month = b.m_month;
+        m_year = b.m_year;
+    }
+};
+
+int EX5() {
+    DateClass3 date;
+    date.setDate(12, 11, 2018); // ок, так как setDate() имеет спецификатор доступа public
+
+    DateClass3 copy;
+    copy.copyFrom(date); // ок, так как copyFrom() имеет спецификатор доступа public
+    copy.print();
+
+    return 0;
+}
+
+class Fraction {
+private:
+    int m_numerator;
+    int m_denominator;
+
+public:
+
+    Fraction() // конструктор по умолчанию 
+    {
+        m_numerator = 0;
+        m_denominator = 1;
+    }
+
+    int getNumerator() {
+        return m_numerator;
+    }
+
+    int getDenominator() {
+        return m_denominator;
+    }
+
+    double getValue() {
+        return static_cast<double> (m_numerator) / m_denominator;
+    }
+};
+
+int EX6() {
+    Fraction drob; // так как нет никаких аргументов, то вызывается конструктор по умолчанию Fraction()
+    cout << drob.getNumerator() << "/" << drob.getDenominator() << '\n';
+    return 0;
+}
+
+int main() {
+    EX1();
+    EX2();
+    EX3();
+    EX4();
+    EX5();
+    EX6();
+}
+

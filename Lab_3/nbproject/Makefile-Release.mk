@@ -35,20 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/EX1.o \
-	${OBJECTDIR}/EX10.o \
-	${OBJECTDIR}/EX11.o \
-	${OBJECTDIR}/EX12.o \
-	${OBJECTDIR}/EX13.o \
-	${OBJECTDIR}/EX2.o \
-	${OBJECTDIR}/EX3.o \
-	${OBJECTDIR}/EX4.o \
-	${OBJECTDIR}/EX5.o \
-	${OBJECTDIR}/EX6.o \
-	${OBJECTDIR}/EX7.o \
-	${OBJECTDIR}/EX8.o \
-	${OBJECTDIR}/EX9.o \
-	${OBJECTDIR}/main.o
+	${OBJECTDIR}/lab_3.o
 
 
 # C Compiler Flags
@@ -75,75 +62,10 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lab_3.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lab_3 ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/EX1.o: EX1.cpp
+${OBJECTDIR}/lab_3.o: lab_3.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/EX1.o EX1.cpp
-
-${OBJECTDIR}/EX10.o: EX10.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/EX10.o EX10.cpp
-
-${OBJECTDIR}/EX11.o: EX11.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/EX11.o EX11.cpp
-
-${OBJECTDIR}/EX12.o: EX12.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/EX12.o EX12.cpp
-
-${OBJECTDIR}/EX13.o: EX13.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/EX13.o EX13.cpp
-
-${OBJECTDIR}/EX2.o: EX2.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/EX2.o EX2.cpp
-
-${OBJECTDIR}/EX3.o: EX3.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/EX3.o EX3.cpp
-
-${OBJECTDIR}/EX4.o: EX4.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/EX4.o EX4.cpp
-
-${OBJECTDIR}/EX5.o: EX5.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/EX5.o EX5.cpp
-
-${OBJECTDIR}/EX6.o: EX6.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/EX6.o EX6.cpp
-
-${OBJECTDIR}/EX7.o: EX7.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/EX7.o EX7.cpp
-
-${OBJECTDIR}/EX8.o: EX8.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/EX8.o EX8.cpp
-
-${OBJECTDIR}/EX9.o: EX9.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/EX9.o EX9.cpp
-
-${OBJECTDIR}/main.o: main.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/lab_3.o lab_3.cpp
 
 # Subprojects
 .build-subprojects:

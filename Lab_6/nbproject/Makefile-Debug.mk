@@ -35,11 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/EX1.o \
-	${OBJECTDIR}/EX2.o \
-	${OBJECTDIR}/EX3.o \
-	${OBJECTDIR}/EX4.o \
-	${OBJECTDIR}/main.o
+	${OBJECTDIR}/lab_6.o
 
 
 # C Compiler Flags
@@ -66,30 +62,10 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lab_6.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lab_6 ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/EX1.o: EX1.cpp
+${OBJECTDIR}/lab_6.o: lab_6.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/EX1.o EX1.cpp
-
-${OBJECTDIR}/EX2.o: EX2.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/EX2.o EX2.cpp
-
-${OBJECTDIR}/EX3.o: EX3.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/EX3.o EX3.cpp
-
-${OBJECTDIR}/EX4.o: EX4.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/EX4.o EX4.cpp
-
-${OBJECTDIR}/main.o: main.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/lab_6.o lab_6.cpp
 
 # Subprojects
 .build-subprojects:

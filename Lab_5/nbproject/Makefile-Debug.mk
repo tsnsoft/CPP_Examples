@@ -35,13 +35,9 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/EX1_1.o \
-	${OBJECTDIR}/EX1_2.o \
-	${OBJECTDIR}/EX1_3.o \
-	${OBJECTDIR}/EX1_4.o \
-	${OBJECTDIR}/func.o \
-	${OBJECTDIR}/funct2.o \
-	${OBJECTDIR}/main.o
+	${OBJECTDIR}/lab_5.o \
+	${OBJECTDIR}/lab_5_my_funct_1.o \
+	${OBJECTDIR}/lab_5_my_funct_2.o
 
 
 # C Compiler Flags
@@ -68,40 +64,20 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lab_5.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lab_5 ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/EX1_1.o: EX1_1.cpp
+${OBJECTDIR}/lab_5.o: lab_5.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/EX1_1.o EX1_1.cpp
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/lab_5.o lab_5.cpp
 
-${OBJECTDIR}/EX1_2.o: EX1_2.cpp
+${OBJECTDIR}/lab_5_my_funct_1.o: lab_5_my_funct_1.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/EX1_2.o EX1_2.cpp
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/lab_5_my_funct_1.o lab_5_my_funct_1.cpp
 
-${OBJECTDIR}/EX1_3.o: EX1_3.cpp
+${OBJECTDIR}/lab_5_my_funct_2.o: lab_5_my_funct_2.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/EX1_3.o EX1_3.cpp
-
-${OBJECTDIR}/EX1_4.o: EX1_4.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/EX1_4.o EX1_4.cpp
-
-${OBJECTDIR}/func.o: func.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/func.o func.cpp
-
-${OBJECTDIR}/funct2.o: funct2.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/funct2.o funct2.cpp
-
-${OBJECTDIR}/main.o: main.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/lab_5_my_funct_2.o lab_5_my_funct_2.cpp
 
 # Subprojects
 .build-subprojects:

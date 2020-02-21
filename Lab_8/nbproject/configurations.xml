@@ -4,17 +4,11 @@
     <logicalFolder name="SourceFiles"
                    displayName="Исходные файлы"
                    projectFiles="true">
-      <itemPath>EX1.cpp</itemPath>
-      <itemPath>EX2.cpp</itemPath>
-      <itemPath>EX3.cpp</itemPath>
-      <itemPath>main.cpp</itemPath>
+      <itemPath>lab_8.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="HeaderFiles"
                    displayName="Файлы заголовков"
                    projectFiles="true">
-      <itemPath>EX1.h</itemPath>
-      <itemPath>EX2.h</itemPath>
-      <itemPath>EX3.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Файлы ресурсов"
@@ -42,19 +36,7 @@
       </toolsSet>
       <compileType>
       </compileType>
-      <item path="EX1.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="EX1.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="EX2.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="EX2.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="EX3.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="EX3.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      <item path="lab_8.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -77,19 +59,7 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="EX1.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="EX1.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="EX2.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="EX2.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="EX3.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="EX3.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      <item path="lab_8.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>
