@@ -13,6 +13,5 @@ int funsumAfter(int n, int x) {
     s = 0;
     for (i = 0; i <= n; i++)
         s += (i + x);
-
     return (s);
 }

@@ -7,7 +7,9 @@
       <itemPath>EX1_1.cpp</itemPath>
       <itemPath>EX1_2.cpp</itemPath>
       <itemPath>EX1_3.cpp</itemPath>
+      <itemPath>EX1_4.cpp</itemPath>
       <itemPath>func.cpp</itemPath>
+      <itemPath>funct2.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="HeaderFiles"
@@ -16,6 +18,7 @@
       <itemPath>EX1_1.h</itemPath>
       <itemPath>EX1_2.h</itemPath>
       <itemPath>EX1_3.h</itemPath>
+      <itemPath>EX1_4.h</itemPath>
       <itemPath>func.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -56,9 +59,15 @@
       </item>
       <item path="EX1_3.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="EX1_4.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="EX1_4.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="func.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="func.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="funct2.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -95,9 +104,15 @@
       </item>
       <item path="EX1_3.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="EX1_4.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="EX1_4.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="func.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="func.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="funct2.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>

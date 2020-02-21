@@ -11,7 +11,6 @@ int EX3() {
         for (int j = 0; j < DIM2; j++) {
             for (int k = 0; k < DIM3; k++) {
                 ary[i][j][k] = (i + 1) * 100 + (j + 1) * 10 + (k + 1);
-
                 printf("%d ", ary[i][j][k]);
             }
             printf("\n");

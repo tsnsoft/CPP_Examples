@@ -38,7 +38,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/EX1_1.o \
 	${OBJECTDIR}/EX1_2.o \
 	${OBJECTDIR}/EX1_3.o \
+	${OBJECTDIR}/EX1_4.o \
 	${OBJECTDIR}/func.o \
+	${OBJECTDIR}/funct2.o \
 	${OBJECTDIR}/main.o
 
 
@@ -81,10 +83,20 @@ ${OBJECTDIR}/EX1_3.o: EX1_3.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/EX1_3.o EX1_3.cpp
 
+${OBJECTDIR}/EX1_4.o: EX1_4.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/EX1_4.o EX1_4.cpp
+
 ${OBJECTDIR}/func.o: func.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/func.o func.cpp
+
+${OBJECTDIR}/funct2.o: funct2.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/funct2.o funct2.cpp
 
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
