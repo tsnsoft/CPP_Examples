@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int EX1() {
+void EX1() {
     int a, b;
     puts("Введите значения а и b");
     scanf("%d %d", &a, &b);
@@ -12,7 +12,7 @@ int EX1() {
     if (a == b) puts("a равно b");
 }
 
-int EX2() {
+void EX2() {
     int i;
 
     printf("Введите целое число:\n");
@@ -25,7 +25,7 @@ int EX2() {
     }
 }
 
-int EX3() {
+void EX3() {
     float x, y;
     printf("Введите исходное значение х\n");
     scanf("%f", &x);
@@ -39,7 +39,7 @@ int EX3() {
     printf("y =%7.3f", y);
 }
 
-int EX4() {
+void EX4() {
     float x, y, b;
     printf("Введите исходные данные х, b \n");
     scanf("%f%f", &x, &b);
@@ -57,7 +57,7 @@ int EX4() {
     printf("y = %7.3f", y);
 }
 
-int EX5() {
+void EX5() {
     char y;
     scanf("%c", &y);
 
@@ -74,7 +74,7 @@ int EX5() {
     }
 }
 
-int EX6() {
+void EX6() {
     int i, j = 1, k;
 
     for (i = 1; i <= 3; i++) {
@@ -96,7 +96,7 @@ int EX6() {
     }
 }
 
-int EX7() {
+void EX7() {
     int a, b, c, i, n;
 
     printf("Введите номер числа Фибоначчи ");
@@ -114,7 +114,7 @@ int EX7() {
     printf("%d-е число Фиббоначчи = %d", n, b);
 }
 
-int EX8() {
+void EX8() {
     float x, y, a, h;
     int i;
 
@@ -129,7 +129,7 @@ int EX8() {
     }
 }
 
-int EX9() {
+void EX9() {
     float x, y, z, h;
     int i, n;
 
@@ -148,7 +148,7 @@ int EX9() {
     printf("x = %7.3f z = %7.3f", x, z);
 }
 
-int EX10() {
+void EX10() {
     float x, s, p;
     int k, n;
 
@@ -166,7 +166,7 @@ int EX10() {
     printf("s = %7.3f", s);
 }
 
-int EX11() {
+void EX11() {
     int i, s;
     i = 1;
     while (scanf("%d", &s)) {
@@ -175,7 +175,7 @@ int EX11() {
     };
 }
 
-int EX12() {
+void EX12() {
     int i, s;
     i = 1;
     s = -1;
@@ -185,7 +185,7 @@ int EX12() {
     } while (scanf("%d", &s));
 }
 
-int EX13() {
+void EX13() {
     float x, y, a, b, h;
     int k, n;
 

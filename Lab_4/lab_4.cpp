@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-int EX1() {
+void EX1() {
     float a[100], s, p;
     int k, n;
 
@@ -27,7 +27,7 @@ const unsigned int DIM2 = 5;
 
 int arr[DIM1][DIM2];
 
-int EX2() {
+void EX2() {
     for (int i = 0; i < DIM1; i++) {
         for (int j = 0; j < DIM2; j++) {
             arr[i][j] = (i + 1) * 10 + (j + 1);
@@ -41,7 +41,7 @@ const unsigned int DIM3 = 2;
 
 int ary[DIM1][DIM2][DIM3];
 
-int EX3() {
+void EX3() {
     for (int i = 0; i < DIM1; i++) {
         for (int j = 0; j < DIM2; j++) {
             for (int k = 0; k < DIM3; k++) {

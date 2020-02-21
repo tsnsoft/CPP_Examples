@@ -1,27 +1,27 @@
 #include <stdio.h>
 #include <string.h>
 
-int EX1() {
+void EX1() {
     char name[20]; // выделение памяти
     scanf("%s", name); // ввод
     printf("%s", name); // вывод
 }
 
-int EX2() {
+void EX2() {
     char sl[] = "CTPOKA";
     char s2[] = "символов";
     strcpy(s2, sl);
     puts(s2); // СТРОКА
 }
 
-int EX3() {
+void EX3() {
     static char s1[] = "СТРОКА";
     const char *s2 = "_символов";
     strcat(s1, s2);
     puts(s1); // СТРОКАсимволов
 }
 
-int EX4() {
+void EX4() {
     char s1[] = "CTPOKA";
     char *ptr, c = 'P';
     ptr = strchr(s1, c);
@@ -31,7 +31,7 @@ int EX4() {
         printf("НЕТ символа");
 }
 
-int EX5() {
+void EX5() {
     char s1[] = "CTPOKA";
     const char *ptr, *s2 = "P0K"; //регистры играют роль
     ptr = strpbrk(s1, s2);
@@ -42,7 +42,7 @@ int EX5() {
         printf("нет символа");
 }
 
-int EX6() {
+void EX6() {
     char s1[] = "LOLOKEKE";
     char s2[] = "KE";
     int n;
@@ -50,7 +50,7 @@ int EX6() {
     printf("%d", n); // 4
 }
 
-int EX7() {
+void EX7() {
     char s1[] = "1234567890";
     char s2[] = "123458";
     int n;

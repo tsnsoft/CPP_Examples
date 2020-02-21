@@ -8,7 +8,7 @@ struct men {
 
 struct men a;
 
-int EX1() {
+void EX1() {
     scanf("%s", a.fio);
     scanf("%s", a.adress);
     a.year = 2003;
@@ -28,7 +28,7 @@ struct computer {
 /* Объявление и инициализация переменной рс типа computer */
 struct computer pc1 = {"Lenovo G70-70", "Core i3 4030U", 1000, 8};
 
-int EX2() {
+void EX2() {
     /* Вывод на экран значений элементов структуры */
     printf("Персональная ЭВМ: %s\n", pc1.model);
     printf("Процессор - %s Gb\n", pc1.cpu);
@@ -47,7 +47,7 @@ struct person {
     struct date f;
 };
 
-int EX3() {
+void EX3() {
     struct person ind;
     printf("Укажите фамилию, имя, отчество: \n");
     scanf("%s %s %s", &ind.fam, &ind.im, &ind.ot);
@@ -66,7 +66,7 @@ struct student {
 
 struct student group[20];
 
-int EX4() {
+void EX4() {
     int n, i;
     printf("Введите количество студентов в группе: ");
     scanf("%d", &n);

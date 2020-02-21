@@ -9,13 +9,13 @@ int funsumBefore(int n, int x) {
     return (s);
 }
 
-int EX1_1() {
+void EX1() {
     int y, a = 2;
     y = funsumBefore(5, a);
     printf("%d", y);
 }
 
-int EX1_2() {
+void EX2() {
     int y, a = 2;
     int funsumAfter(int, int); //прототип   
     y = funsumAfter(5, a); // обращение к функции
@@ -30,13 +30,13 @@ int funsumAfter(int n, int x) {
     return (s);
 }
 
-int EX1_3() {
+void EX3() {
     int y, a = 2;
     y = lab_5_my_funct_1(5, a);
     printf("%d", y);
 }
 
-int EX1_4() {
+void EX4() {
     int arr[5] = {1, 2, 3, 4, 5};
     int s;
     s = lab_5_my_funct_2(arr, 5);
@@ -44,8 +44,8 @@ int EX1_4() {
 }
 
 int main() {
-    EX1_1();
-    EX1_2();
-    EX1_3();
-    EX1_4();
+    EX1();
+    EX2();
+    EX3();
+    EX4();
 }

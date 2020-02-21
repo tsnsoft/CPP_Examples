@@ -1,14 +1,14 @@
 #include <stdio.h> 
 #include <math.h> 
 
-int EX1() {
+void EX1() {
     int C;
     if ((C = 5 + 3) > 0) {
         printf("Число C больше нуля!");
     }
 }
 
-int EX2() {
+void EX2() {
     float a, b, h, s;
     printf("Введите значения - a, b, h \n");
     scanf("\n%f %f %f", &a, &b, &h);
@@ -17,7 +17,7 @@ int EX2() {
     printf("\ns = %f", s);
 }
 
-int EX3() {
+void EX3() {
     float a, b, x, y, z;
     printf("введите исходные данные a, b, x\n");
     scanf("%f%f %f", &a, &b, &x);
@@ -26,7 +26,7 @@ int EX3() {
     printf("x = %7.3f y=%7.3f z=%7.3f", x, y, z);
 }
 
-int EX4() {
+void EX4() {
     float x, y, a;
     printf("Введите исходное значение X \n");
     scanf("%f", &x);

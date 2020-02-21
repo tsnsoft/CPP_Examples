@@ -13,11 +13,10 @@ void print(DateStruct &date) {
     cout << date.day << "/" << date.month << "/" << date.year;
 }
 
-int EX1() {
+void EX1() {
     DateStruct today{ 12, 11, 2018}; // используем uniform инициализацию
     today.day = 18; // используем оператор выбора члена для выбора члена структуры
     print(today); // 18/11/2018
-    return 0;
 }
 
 class DateClass1 {
@@ -31,13 +30,12 @@ public:
     }
 };
 
-int EX2() {
+void EX2() {
     DateClass1 today{ 12, 11, 2018};
     // используем оператор выбора членов для выбора переменной-члена объекта today класса DateClass
     today.m_day = 18;
     // используем оператор выбора членов для вызова метода объекта today класса DateClass
     today.print();
-    return 0;
 }
 
 class Employee {
@@ -54,7 +52,7 @@ public:
     }
 };
 
-int EX3() {
+void EX3() {
     // Объявляем двух работников
     Employee john{ "John", 5, 30.00};
     Employee max{ "Max", 6, 32.75};
@@ -63,8 +61,6 @@ int EX3() {
     john.print();
     cout << endl;
     max.print();
-
-    return 0;
 }
 
 class DateClass2 // члены класса являются закрытыми по умолчанию
@@ -89,11 +85,10 @@ public:
     }
 };
 
-int EX4() {
+void EX4() {
     DateClass2 date;
     date.setDate(12, 11, 2018); // ок, так как setDate() имеет спецификатор доступа public
     date.print(); // ок, так как print() имеет спецификатор доступа public
-    return 0;
 }
 
 class DateClass3 // члены класса являются закрытыми по умолчанию 
@@ -124,15 +119,13 @@ public:
     }
 };
 
-int EX5() {
+void EX5() {
     DateClass3 date;
     date.setDate(12, 11, 2018); // ок, так как setDate() имеет спецификатор доступа public
 
     DateClass3 copy;
     copy.copyFrom(date); // ок, так как copyFrom() имеет спецификатор доступа public
     copy.print();
-
-    return 0;
 }
 
 class Fraction {
@@ -161,10 +154,9 @@ public:
     }
 };
 
-int EX6() {
+void EX6() {
     Fraction drob; // так как нет никаких аргументов, то вызывается конструктор по умолчанию Fraction()
     cout << drob.getNumerator() << "/" << drob.getDenominator() << '\n';
-    return 0;
 }
 
 int main() {

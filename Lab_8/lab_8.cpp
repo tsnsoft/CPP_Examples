@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int EX1() {
+void EX1() {
     char str[50];
     FILE *FL;
 
@@ -25,22 +25,22 @@ int EX1() {
     fclose(FL);
 }
 
-int EX2() {
+void EX2() {
     FILE *fp;
     char name[] = "my.txt";
 
     if ((fp = fopen(name, "r")) == NULL) {
         printf("Не удалось открыть файл");
-        return 0;
+        return;
     }
 
     // открыть файл удалось
     // требуемые действия над данными
     fclose(fp);
-    return 0;
+    return;
 }
 
-int EX3() {
+void EX3() {
     FILE *S1, *S2;
     int x, y;
 
