@@ -71,9 +71,9 @@ class DateClass2 // члены класса являются закрытыми 
 
 public:
 
+    // Метод setDate() имеет доступ к закрытым членам класса, так как сам является членом класса
     void setDate(int day, int month, int year) // открыто, доступ имеет любой объект
     {
-        // Метод setDate() имеет доступ к закрытым членам класса, так как сам является членом класса
         m_day = day;
         m_month = month;
         m_year = year;
@@ -110,7 +110,6 @@ public:
     }
 
     // Обратите внимание на этот дополнительный метод
-
     void copyFrom(const DateClass3 &b) {
         // Мы имеем прямой доступ к закрытым членам объекта b
         m_day = b.m_day;
@@ -159,6 +158,47 @@ void EX6() {
     cout << drob.getNumerator() << "/" << drob.getDenominator() << '\n';
 }
 
+void EX7() {
+    // Класс Person
+    class Person {
+    public:
+
+        Person(std::string n, int a) { // Конструктор класса
+            name = n; age = a;
+        }
+
+        void display() { // Метод
+            std::cout << "Name: " << name << "\tAge: " << age << std::endl;
+        }
+    protected:
+        std::string name; // Защищенное от доступа извне поле name
+    private:
+        int age; // Скрытое поле age
+    };
+
+    // Класс Employee наследник класса Person
+    class Employee : public Person {
+    public:
+        // Конструктор класса Employee с автовызовом родительского конструктора подкласса Person
+        Employee(std::string n, int a, std::string c) : Person(n, a) {
+            company = c;
+        }
+
+        void showEmployeeName() { // Публичный метод
+            std::cout << "Employee Name: " << name << std::endl;
+        }
+    private:
+        std::string company; // Внутреннее скрытое поле company
+    };
+
+    Person tom("Tom", 23);
+    // tom.name = "Tommy";  //ошибка
+    Employee bob("Bob", 31, "Microsoft");
+    //bob.name = "Bob Tompson"; // ошибка
+    bob.showEmployeeName();
+    bob.display();
+}
+
 int main() {
     EX1();
     EX2();
@@ -166,5 +206,6 @@ int main() {
     EX4();
     EX5();
     EX6();
+    EX7();
 }
 
