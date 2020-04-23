@@ -10,7 +10,7 @@ struct DateStruct {
 };
 
 void print(DateStruct &date) {
-    cout << date.day << "/" << date.month << "/" << date.year;
+    cout << date.day << "/" << date.month << "/" << date.year  << endl;
 }
 
 void EX1() {
@@ -26,7 +26,7 @@ public:
     int m_year;
 
     void print() {
-        cout << m_day << "/" << m_month << "/" << m_year;
+        cout << m_day << "/" << m_month << "/" << m_year << endl;
     }
 };
 
@@ -46,9 +46,7 @@ public:
 
     // Метод вывода информации о работнике на экран
     void print() {
-        cout << "Name: " << m_name <<
-                "\nId: " << m_id <<
-                "\nWage: $" << m_wage << '\n';
+        cout << "Name: " << m_name << "\nId: " << m_id << "\nWage: $" << m_wage << '\n';
     }
 };
 
@@ -59,7 +57,6 @@ void EX3() {
 
     // Выводим информацию о работниках на экран
     john.print();
-    cout << endl;
     max.print();
 }
 
@@ -70,7 +67,6 @@ class DateClass2 // члены класса являются закрытыми 
     int m_year; // закрыто по умолчанию, доступ имеют только другие члены класса
 
 public:
-
     // Метод setDate() имеет доступ к закрытым членам класса, так как сам является членом класса
     void setDate(int day, int month, int year) // открыто, доступ имеет любой объект
     {
@@ -81,12 +77,13 @@ public:
 
     void print() // открыто, доступ имеет любой объект
     {
-        cout << m_day << "/" << m_month << "/" << m_year;
+        cout << m_day << "/" << m_month << "/" << m_year  << endl;
     }
 };
 
 void EX4() {
     DateClass2 date;
+    // date.m_day = 12; // Так делать нельзя, поле скрытое
     date.setDate(12, 11, 2018); // ок, так как setDate() имеет спецификатор доступа public
     date.print(); // ок, так как print() имеет спецификатор доступа public
 }
@@ -98,17 +95,14 @@ class DateClass3 // члены класса являются закрытыми 
     int m_year; // закрыто по умолчанию, доступ имеют только другие члены класса
 
 public:
-
     void setDate(int day, int month, int year) {
         m_day = day;
         m_month = month;
         m_year = year;
     }
-
     void print() {
-        cout << m_day << "/" << m_month << "/" << m_year;
+        cout << m_day << "/" << m_month << "/" << m_year  << endl;
     }
-
     // Обратите внимание на этот дополнительный метод
     void copyFrom(const DateClass3 &b) {
         // Мы имеем прямой доступ к закрытым членам объекта b
@@ -133,7 +127,6 @@ private:
     int m_denominator;
 
 public:
-
     Fraction() // конструктор по умолчанию 
     {
         m_numerator = 0;
@@ -155,16 +148,17 @@ public:
 
 void EX6() {
     Fraction drob; // так как нет никаких аргументов, то вызывается конструктор по умолчанию Fraction()
-    cout << drob.getNumerator() << "/" << drob.getDenominator() << '\n';
+    cout << drob.getValue() << '\n';
+    cout << drob.getNumerator() << "~/~" << drob.getDenominator() << '\n';
 }
 
 void EX7() {
     // Класс Person
     class Person {
     public:
-
         Person(std::string n, int a) { // Конструктор класса
-            name = n; age = a;
+            name = n;
+            age = a;
         }
 
         void display() { // Метод
@@ -180,6 +174,7 @@ void EX7() {
     class Employee : public Person {
     public:
         // Конструктор класса Employee с автовызовом родительского конструктора подкласса Person
+
         Employee(std::string n, int a, std::string c) : Person(n, a) {
             company = c;
         }
@@ -199,6 +194,29 @@ void EX7() {
     bob.display();
 }
 
+class MyClassSum {
+public:
+    //пример метода с перезагрузкой
+    double sum(double x, double y) {
+        double d;
+        d = x + y;
+        return d;
+    }
+
+    //пример метода с перезагрузкой
+    int sum(int x, int y) {
+        int d;
+        d = x + y;
+        return d;
+    }
+};
+
+void EX8() {
+    MyClassSum myClass;
+    cout << myClass.sum(12, 12) << endl;
+    cout << myClass.sum(12.5, 12.5) << endl;
+}
+
 int main() {
     EX1();
     EX2();
@@ -207,5 +225,6 @@ int main() {
     EX5();
     EX6();
     EX7();
+    EX8();
 }
 
