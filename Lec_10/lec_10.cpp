@@ -1,16 +1,18 @@
-#include <iostream>
-#include <string>
+#define _CRT_SECURE_NO_WARNINGS // отключение предупреждений о небезопасности
 
-using namespace std;
+#include <iostream> // подключение библиотеки ввода-вывода
+#include <string> // подключение библиотеки строк
 
-struct DateStruct {
-    int day;
-    int month;
-    int year;
+using namespace std; // использование пространства имен std
+
+struct DateStruct { // определение структуры DateStruct
+    int day; // день
+    int month; // месяц
+    int year; // год
 };
 
-void print(DateStruct &date) {
-    cout << date.day << "/" << date.month << "/" << date.year  << endl;
+void print(DateStruct& date) { // функция вывода даты
+    cout << date.day << "/" << date.month << "/" << date.year << endl; // вывод даты
 }
 
 void EX1() {
@@ -19,30 +21,30 @@ void EX1() {
     print(today); // 18/11/2018
 }
 
-class DateClass1 {
-public:
-    int m_day;
-    int m_month;
-    int m_year;
+class DateClass1 { // определение класса DateClass1
+public: // спецификатор доступа public
+    int m_day; // день
+    int m_month; // месяц
+    int m_year; // год
 
-    void print() {
+    void print() { // метод вывода даты
         cout << m_day << "/" << m_month << "/" << m_year << endl;
     }
 };
 
 void EX2() {
-    DateClass1 today{ 12, 11, 2018};
+    DateClass1 today{ 12, 11, 2018}; // используем uniform инициализацию
     // используем оператор выбора членов для выбора переменной-члена объекта today класса DateClass
     today.m_day = 18;
     // используем оператор выбора членов для вызова метода объекта today класса DateClass
     today.print();
 }
 
-class Employee {
-public:
-    string m_name;
-    int m_id;
-    double m_wage;
+class Employee { // определение класса Employee
+public: // спецификатор доступа public
+    string m_name; // имя работника
+    int m_id; // идентификатор работника
+    double m_wage; // заработная плата работника
 
     // Метод вывода информации о работнике на экран
     void print() {
@@ -52,12 +54,12 @@ public:
 
 void EX3() {
     // Объявляем двух работников
-    Employee john{ "John", 5, 30.00};
-    Employee max{ "Max", 6, 32.75};
+    Employee john{ "John", 5, 30.00}; // используем uniform инициализацию
+    Employee max{ "Max", 6, 32.75}; // используем uniform инициализацию
 
     // Выводим информацию о работниках на экран
-    john.print();
-    max.print();
+    john.print(); // используем оператор выбора членов для вызова метода объекта john класса Employee
+    max.print(); // используем оператор выбора членов для вызова метода объекта max класса Employee
 }
 
 class DateClass2 // члены класса являются закрытыми по умолчанию
@@ -77,7 +79,7 @@ public:
 
     void print() // открыто, доступ имеет любой объект
     {
-        cout << m_day << "/" << m_month << "/" << m_year  << endl;
+        cout << m_day << "/" << m_month << "/" << m_year << endl;
     }
 };
 
@@ -95,16 +97,18 @@ class DateClass3 // члены класса являются закрытыми 
     int m_year; // закрыто по умолчанию, доступ имеют только другие члены класса
 
 public:
+
     void setDate(int day, int month, int year) {
         m_day = day;
         m_month = month;
         m_year = year;
     }
+
     void print() {
-        cout << m_day << "/" << m_month << "/" << m_year  << endl;
+        cout << m_day << "/" << m_month << "/" << m_year << endl;
     }
     // Обратите внимание на этот дополнительный метод
-    void copyFrom(const DateClass3 &b) {
+    void copyFrom(const DateClass3& b) {
         // Мы имеем прямой доступ к закрытым членам объекта b
         m_day = b.m_day;
         m_month = b.m_month;
@@ -113,36 +117,37 @@ public:
 };
 
 void EX5() {
-    DateClass3 date;
+    DateClass3 date; // создаем объект date класса DateClass3
     date.setDate(12, 11, 2018); // ок, так как setDate() имеет спецификатор доступа public
 
     DateClass3 copy;
     copy.copyFrom(date); // ок, так как copyFrom() имеет спецификатор доступа public
-    copy.print();
+    copy.print(); // ок, так как print() имеет спецификатор доступа public
 }
 
-class Fraction {
-private:
-    int m_numerator;
-    int m_denominator;
+class Fraction { // класс дробь
+private: // спецификатор доступа private
+    int m_numerator; // числитель
+    int m_denominator; // знаменатель
 
-public:
+public: // конструктор класса
+
     Fraction() // конструктор по умолчанию 
     {
-        m_numerator = 0;
-        m_denominator = 1;
+        m_numerator = 0; // инициализируем числитель нулем
+        m_denominator = 1; // инициализируем знаменатель единицей
     }
 
-    int getNumerator() {
-        return m_numerator;
+    int getNumerator() { // метод получения числителя
+        return m_numerator; // возвращаем числитель
     }
 
-    int getDenominator() {
-        return m_denominator;
+    int getDenominator() { // метод получения знаменателя
+        return m_denominator; // возвращаем знаменатель
     }
 
-    double getValue() {
-        return static_cast<double> (m_numerator) / m_denominator;
+    double getValue() { // метод получения значения дроби
+        return static_cast<double> (m_numerator) / m_denominator; // возвращаем значение дроби
     }
 };
 
@@ -154,48 +159,48 @@ void EX6() {
 
 void EX7() {
     // Класс Person
-    class Person {
-    public:
+    class Person { // Базовый класс
+    public: // Открытая секция класса
         Person(std::string n, int a) { // Конструктор класса
-            name = n;
-            age = a;
+            name = n; // Инициализация поля name
+            age = a; // Инициализация поля age
         }
 
         void display() { // Метод
             std::cout << "Name: " << name << "\tAge: " << age << std::endl;
         }
-    protected:
+    protected: // Защищенная секция класса
         std::string name; // Защищенное от доступа извне поле name
-    private:
+    private: // Скрытая секция класса
         int age; // Скрытое поле age
     };
 
     // Класс Employee наследник класса Person
-    class Employee : public Person {
+    class Employee : public Person { // Публичное наследование
     public:
         // Конструктор класса Employee с автовызовом родительского конструктора подкласса Person
 
-        Employee(std::string n, int a, std::string c) : Person(n, a) {
+        Employee(std::string n, int a, std::string c) : Person(n, a) { // Конструктор класса Employee
             company = c;
         }
 
         void showEmployeeName() { // Публичный метод
             std::cout << "Employee Name: " << name << std::endl;
         }
-    private:
+    private: // Скрытая секция класса
         std::string company; // Внутреннее скрытое поле company
     };
 
-    Person tom("Tom", 23);
+    Person tom("Tom", 23); // Создаем объект класса Person
     // tom.name = "Tommy";  //ошибка
-    Employee bob("Bob", 31, "Microsoft");
+    Employee bob("Bob", 31, "Microsoft"); // Создаем объект класса Employee
     //bob.name = "Bob Tompson"; // ошибка
-    bob.showEmployeeName();
-    bob.display();
+    bob.showEmployeeName(); // Вызов метода showEmployeeName()
+    bob.display(); // Вызов метода display()
 }
 
-class MyClassSum {
-public:
+class MyClassSum { // класс с перезагрузкой метода
+public: // спецификатор доступа public
     //пример метода с перезагрузкой
     double sum(double x, double y) {
         double d;
@@ -212,19 +217,19 @@ public:
 };
 
 void EX8() {
-    MyClassSum myClass;
-    cout << myClass.sum(12, 12) << endl;
-    cout << myClass.sum(12.5, 12.5) << endl;
+    MyClassSum myClass; // создаем объект класса MyClassSum
+    cout << myClass.sum(12, 12) << endl; // вызываем метод sum(int x, int y)
+    cout << myClass.sum(12.5, 12.5) << endl; // вызываем метод sum(double x, double y)
 }
 
 int main() {
-    EX1();
-    EX2();
-    EX3();
-    EX4();
-    EX5();
-    EX6();
-    EX7();
+    setlocale(LC_ALL, "Russian"); // установка русской локализации
+    EX1(); std::cout << std::endl << std::endl;
+    EX2(); std::cout << std::endl << std::endl;
+    EX3(); std::cout << std::endl << std::endl;
+    EX4(); std::cout << std::endl << std::endl;
+    EX5(); std::cout << std::endl << std::endl;
+    EX6(); std::cout << std::endl << std::endl;
+    EX7(); std::cout << std::endl << std::endl;
     EX8();
 }
-

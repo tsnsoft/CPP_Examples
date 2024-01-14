@@ -6,6 +6,7 @@
 #define FNT "2)x равен %d \n"
 
 int main() {
+    setlocale(LC_ALL, "Russian");
     // ПРИМЕР 1
     int x = TWO;
     PX;

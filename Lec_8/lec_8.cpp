@@ -1,129 +1,124 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <iostream>
-#include <fstream>
-#include <cstring>
+#define _CRT_SECURE_NO_WARNINGS // отключение предупреждений о небезопасности
 
-using namespace std;
+#include <iostream> // подключение библиотеки ввода-вывода
+#include <fstream> // подключение библиотеки файлового ввода-вывода
+#include <cstring> // подключение библиотеки для работы со строками
+
+using namespace std; // использование пространства имен std
 
 void EX1() {
-    char str[50];
-    FILE *FL;
+    char str[50]; /* Строка для записи в файл */
+    FILE* FL; /* Указатель на файл */
 
-    FL = fopen("FAL.F", "w");
-    puts("Введите строку (до 49 символов)");
-    scanf("%s", str);
-    /* Функция fputs записывает в файл строку str*/
-    fputs(str, FL);
+    FL = fopen("FAL.F", "w"); /* Файл открывается для записи */
+    puts("Введите строку (до 49 символов)"); /* Функция puts выводит на экран строку */
+    scanf("%s", str); /* Функция scanf считывает строку str с экрана */
+    fputs(str, FL); /* Функция fputs записывает в файл символ '\n' - перевод строки */
 
     /* Текст в функции fprintf будет выведен на экран*/
-    fprintf(stderr, "Демонстрация вывода в стандартный файл для ошибок\n");
-    fclose(FL);
+    fprintf(stderr, "Демонстрация вывода в стандартный файл для ошибок\n"); /* Функция fprintf выводит на экран строку */
+    fclose(FL); /* Файл закрывается */
 
-    /* Файл открывается для чтения */
-    FL = fopen("FAL.F", "r");
-
-    /* Функция fgets считывает из файла FAL.F строку str, максимальная длина которой 20-1=19 ( 20- второй параметр fgets); получившаяся строка оканчивается символом '\0' */
-    fgets(str, 20, FL);
-
-    printf("str = %s", str);
-    fclose(FL);
+    FL = fopen("FAL.F", "r"); /* Файл открывается для чтения */
+    fgets(str, 20, FL); /* Функция fgets считывает из файла FAL.F строку str, максимальная длина которой 20-1=19 ( 20- второй параметр fgets); получившаяся строка оканчивается символом '\0' */
+    printf("str = %s", str); /* Функция printf выводит на экран строку */
+    fclose(FL); /* Файл закрывается */
 }
 
 void EX2() {
-    FILE *fp;
-    char name[] = "my.txt";
+    FILE* fp; // указатель на файловую переменную
+    char name[] = "my.txt"; // имя файла
 
-    if ((fp = fopen(name, "r")) == NULL) {
-        printf("Не удалось открыть файл");
-        return;
+    if ((fp = fopen(name, "r")) == NULL) { // попытка открыть файл для чтения
+        printf("Не удалось открыть файл"); // если файл не открылся, выводим сообщение
+        return; // завершаем программу
     }
 
     // открыть файл удалось
-    printf("Файл найден!");
+    printf("Файл найден!"); // выводим сообщение
     // требуемые действия над данными
-    fclose(fp);
-    return;
+    fclose(fp); // закрываем файл
+    return; // завершаем программу
 }
 
 void EX3() {
-    FILE *S1, *S2;
-    int x, y;
+    FILE* S1, * S2; // указатели на файловые переменные
+    int x, y; // переменные для записи в файл и чтения из файла
 
-    printf("Введите число: ");
-    scanf("%d", &x);
+    printf("Введите число: "); // выводим сообщение
+    scanf("%d", &x); // считываем число
 
-    S1 = fopen("S1.txt", "w");
-    fprintf(S1, "%d", x);
-    fclose(S1);
+    S1 = fopen("S1.txt", "w"); // открываем файл для записи
+    fprintf(S1, "%d", x); // записываем число в файл
+    fclose(S1); // закрываем файл
 
-    S1 = fopen("S1.txt", "r");
-    S2 = fopen("S2.txt", "w");
-    fscanf(S1, "%d", &y);
+    S1 = fopen("S1.txt", "r"); // открываем файл для чтения
+    S2 = fopen("S2.txt", "w"); // открываем файл для записи
+    fscanf(S1, "%d", &y); // считываем число из файла
 
-    y += 3;
+    y += 3; // прибавляем к числу 3
 
-    fclose(S1);
+    fclose(S1); // закрываем файл
 
-    fprintf(S2, "%d\n", y);
+    fprintf(S2, "%d\n", y); // записываем число в файл
 
-    fclose(S2);
+    fclose(S2); // закрываем файл
 }
 
 void EX4() {
 
-    struct costume {
-        char firm[30];
-        int size;
-        int cons;
-        int price;
+    struct costume { //создаем структуру
+        char firm[30]; //название фирмы
+        int size; //размер
+        int cons; //расход
+        int price; //цена
     };
 
-    char firm[30];
-    int size;
-    int cons;
-    int price;
+    char firm[30]; //название фирмы
+    int size; //размер
+    int cons; //расход
+    int price; //цена
 
-    const int n = 3;
+    const int n = 3; //количество элементов в массиве
 
-    costume mas[n];
+    costume mas[n]; //создаем массив структур
 
 
     // Запись данных в файл
-    ofstream f_out("costume.txt");
+    ofstream f_out("costume.txt"); //создаем файл
     for (int i = 0; i < n; i++) {//в цикле заполняем файл 
-        cout << i + 1 << " фирма: ";
-        cin >> firm;
-        f_out << firm << endl;
-        cout << "Размер:";
-        cin >> size;
-        f_out << size << endl;
-        cout << "Расход: ";
-        cin >> cons;
-        f_out << cons << endl;
-        cout << "Цена: ";
-        cin >> price;
-        f_out << price << endl;
-        cout << "\n";
+        cout << i + 1 << " фирма: "; //выводим номер фирмы
+        cin >> firm; //вводим название фирмы
+        f_out << firm << endl; //записываем в файл
+        cout << "Размер:"; // выводим размер
+        cin >> size; //вводим размер
+        f_out << size << endl; //записываем в файл
+        cout << "Расход: "; //выводим расход
+        cin >> cons; //вводим расход
+        f_out << cons << endl; //записываем в файл
+        cout << "Цена: "; //выводим цену
+        cin >> price; //вводим цену
+        f_out << price << endl; //записываем в файл
+        cout << "\n"; //переход на новую строку
     }
-    f_out.close();
+    f_out.close(); //закрываем файл
 
     // Чтение данных из файла
-    ifstream f_in("costume.txt");
+    ifstream f_in("costume.txt"); //открываем файл
     for (int i = 0; i < n; i++) {//в цикле заполняем файл 
-        f_in >> mas[i].firm;
-        f_in >> mas[i].size;
-        f_in >> mas[i].cons;
-        f_in >> mas[i].price;
+        f_in >> mas[i].firm; //считываем из файла значение фирмы в массив
+        f_in >> mas[i].size; //считываем из файла значение размера в массив
+        f_in >> mas[i].cons; //считываем из файла значение расхода в массив
+        f_in >> mas[i].price; //считываем из файла значение цены в массив
     }
-    f_in.close();
+    f_in.close(); //закрываем файл
 
     // Поиск фирмы с заданным названием
-    cout << "\nВведите фирму: ";
-    char a[100];
-    scanf("%s", &a);
-    for (int i = 0; i < n; i++) {
-        if (strcmp(mas[i].firm, a) == 0) {
+    cout << "\nВведите фирму: "; //выводим сообщение
+    char a[100]; //создаем массив символов
+    scanf("%s", &a); //вводим название фирмы
+    for (int i = 0; i < n; i++) { //в цикле ищем фирму
+        if (strcmp(mas[i].firm, a) == 0) { //если фирма найдена
             cout << "Фирма: " << mas[i].firm << " Размер:"
                     << mas[i].size << " Расход:"
                     << mas[i].cons << " Цена: " << mas[i].price << endl;
@@ -135,8 +130,9 @@ void EX4() {
 }
 
 int main() {
-    EX1();
-    EX2();
-    EX3();
+    setlocale(LC_ALL, "Russian"); // установка русской локализации
+    EX1(); std::cout << std::endl << std::endl;
+    EX2(); std::cout << std::endl << std::endl;
+    EX3(); std::cout << std::endl << std::endl;
     EX4();
 }
